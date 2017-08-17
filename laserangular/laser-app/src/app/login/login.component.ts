@@ -16,7 +16,7 @@ export class LoginComponent implements OnInit
 
   ngOnInit() 
   {
-
+    //do stuff
   }
 
   login(pName, pPassword)
@@ -27,7 +27,6 @@ export class LoginComponent implements OnInit
 
     this.http.post('/api/test-page/', loginDetails, {
     }).subscribe(data =>{
-      alert(data),
       (err: HttpErrorResponse) => {
         if (err.error instanceof Error) 
         {

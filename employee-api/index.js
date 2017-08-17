@@ -16,7 +16,7 @@ app.post('/test-page', function(req, res)
     //res.send(loginDetails);
     //console.log();   
     var response = db.login(req.body.name, req.body.password);
-    res.end(response); 
+    res.send(response);
 });
 
 app.listen(8002, function()

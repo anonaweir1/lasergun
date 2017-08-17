@@ -1,36 +1,36 @@
 const mysql = require('mysql');
 const express = require('express');
 const app = express();
+var db;
 
 const bodyParser = require('body-parser')
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
 exports.login  = function(pUsername, pPassword)
-{
-    var connectCode = 0;
-    
-    const db = mysql.createConnection({
+{            
+    db = mysql.createConnection({
         host: 'localhost',
         user: pUsername,
         password: pPassword,
         database: 'lasergun'
     });
-        
-    db.connect(function(err)
-    {
-        if(err)
+
+    db.connect(function (err) 
+    {        
+        if (err) 
         {
-            connectCode=1;
-            console.log("sorry, try again");
+            console.log("Incorrect credentials");             
+            return false; 
         }
         else
         {
-            connectCode=true;
-            console.log("Connected to MySQL");            
+            console.log("connected"); 
+            return true;
         }
     });
-    return JSON.stringify(connectCode);
+
+    return JSON.stringify({"authGood":true});
 }
 
 exports.addEmployee = function (name, address, intialSalary, nin, bankAccoutNo, sortCode, departmentID, callback){
