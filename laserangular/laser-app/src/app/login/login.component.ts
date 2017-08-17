@@ -27,7 +27,7 @@ export class LoginComponent implements OnInit
 
     this.http.post('/api/test-page/', loginDetails, {
     }).subscribe(data =>{
-      alert(data['results']),
+      alert(data),
       (err: HttpErrorResponse) => {
         if (err.error instanceof Error) 
         {

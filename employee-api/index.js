@@ -14,8 +14,9 @@ app.get('/dawid', function(req, res)
 app.post('/test-page', function(req, res) 
 {
     //res.send(loginDetails);
-    //console.log();
-    db.login(req.body.name, req.body.password);
+    //console.log();   
+    var response = db.login(req.body.name, req.body.password);
+    res.end(response); 
 });
 
 app.listen(8002, function()

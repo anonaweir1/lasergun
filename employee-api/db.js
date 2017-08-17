@@ -6,14 +6,10 @@ const bodyParser = require('body-parser')
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
-app.post('/api/test-page', function(req, res) 
-{
-    //this.name = req.name;
-    //this.password = req.password;
-});
-
 exports.login  = function(pUsername, pPassword)
 {
+    var connectCode = 0;
+    
     const db = mysql.createConnection({
         host: 'localhost',
         user: pUsername,
@@ -25,11 +21,14 @@ exports.login  = function(pUsername, pPassword)
     {
         if(err)
         {
+            connectCode=1;
             console.log("sorry, try again");
         }
         else
         {
+            connectCode=true;
             console.log("Connected to MySQL");            
         }
     });
+    return JSON.stringify(connectCode);
 }
