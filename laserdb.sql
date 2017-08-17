@@ -151,19 +151,19 @@ create user 'talentManager'@'%' identified by 'talentManagerPassword';
 -- grant permis
 
 -- hr
-grant insert, select, update on obodb.employee to 'hr'@'%';
-grant insert, select, update on obodb.department to 'hr'@'%';
-grant insert, select, update on obodb.salesEmployee to 'hr'@'%';
+grant insert, select, update on lasergun.employee to 'hr'@'%';
+grant insert, select, update on lasergun.department to 'hr'@'%';
+grant insert, select, update on lasergun.salesEmployee to 'hr'@'%';
 
 -- finance
-grant select on obodb.employee to 'finance'@'%';
-grant select on obodb.salesEmployee to 'finance'@'%';
+grant select on lasergun.employee to 'finance'@'%';
+grant select on lasergun.salesEmployee to 'finance'@'%';
 
 -- salesManager
-grant select on obodb.employee to 'salesManager'@'%';
-grant select on obodb.salesEmployee to 'salesManager'@'%';
+grant select on lasergun.employee to 'salesManager'@'%';
+grant select on lasergun.salesEmployee to 'salesManager'@'%';
 
 -- talentManager
-grant insert, select, update on obodb.assignment to 'talentManager'@'%';
-grant insert, select, update on obodb.project to 'talentManager'@'%';
-grant select on obodb.employee to 'talentManager'@'%';
+grant insert, select, update on lasergun.assignment to 'talentManager'@'%';
+grant insert, select, update on lasergun.project to 'talentManager'@'%';
+grant select on lasergun.employee to 'talentManager'@'%';
