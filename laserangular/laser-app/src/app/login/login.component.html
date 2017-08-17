@@ -1,7 +1,7 @@
 <div class="login">
   <label>Login</label>
-  <input type="text" /><br/>
+  <input #name value="" type="text" /><br/>
   <label>Password</label>
-  <input type="password" />
-  <div (click)="login()">log in</div>
+  <input #password value="" type="password" />
+  <div (click)="login(name.value, password.value)">log in</div>
 </div>
