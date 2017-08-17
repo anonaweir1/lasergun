@@ -1,3 +1,27 @@
-<p>
-  add-employee works!
-</p>
+
+
+  <form>
+  <!-- <label for="employeeNumber">Employee Number</label>
+  <input name="EmployeeNumber" id="employeeNumber" ng-model="employee.employeeNumber"/> <br> -->
+  <label for="employeeName">Name</label>
+  <input name="EmployeeName" id="employeeName" [(ngModel)]="employee.name"/> <br>
+  <label for="employeeAddress">Address</label>
+  <input name="EmployeeAddress" id="employeeAddress" [(ngModel)]="employee.address"/><br>
+
+  <label for="employeeInitialSalary">Initial Salary</label>
+  <input name="EmployeeSalary" id="employeeInitialSalary" [(ngModel)]="employee.initialSalary"/><br>
+
+  <label for="nationalInsurance">National Insurance</label>
+  <input name="EmployeeNIN" id="nationalInsurance" [(ngModel)]="employee.nin"/><br>
+
+  <label for="bankAccount">Bank Account Number</label>
+  <input name="BankAccount" id="bankAccount" [(ngModel)]="employee.bankAccountNo"/><br>
+
+<label for="sortCode">Sort Code</label>
+<input name="SortCode" id="sortCode" [(ngModel)]="employee.sortCode"/><br>
+
+<label for="departmentID">Department ID</label>
+<input name="DepartmentID" id="departmentID" [(ngModel)]="employee.departmentID"/><br>
+
+<input type="button" value="Submit" (click)="onSave(employee)"/>
+</form>

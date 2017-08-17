@@ -32,3 +32,22 @@ exports.login  = function(pUsername, pPassword)
     });
     return JSON.stringify(connectCode);
 }
+
+exports.addEmployee = function (name, address, intialSalary, nin, bankAccoutNo, sortCode, departmentID, callback){
+    db.query(
+        "INSERT INTO employee (name, address, initialSalary, nin, bankAccountNo, sortCode, departmentID) VALUES (?, ?, ?, ?, ?, ?, ?);",
+        [name, address, intialSalary, nin, bankAccoutNo, sortCode, departmentID],
+        function (err, rows) {
+            if(err) throw err;
+            callback ('success');
+        });
+};
+
+exports.getEmployeesInDepartment = function (emp, callback){
+    db.query(
+        "SELECT * FROM employee",
+        function (err, rows) {
+            if(err) throw err;
+            callback ('success');
+        });
+};
