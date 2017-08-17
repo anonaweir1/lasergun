@@ -23,7 +23,13 @@ exports.login  = function(pUsername, pPassword)
         
     db.connect(function(err)
     {
-        if(err) throw err;
-        console.log("Connected to MySQL");
+        if(err)
+        {
+            console.log("sorry, try again");
+        }
+        else
+        {
+            console.log("Connected to MySQL");            
+        }
     });
 }

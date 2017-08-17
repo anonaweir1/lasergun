@@ -21,9 +21,11 @@ body {
 }
 
 .login label {
-    line-height: 40px;      
+    line-height: 40px;
+    color: white;     
 }
 
 .login div {
     line-height: 100px;    
+    color: white;
 }
