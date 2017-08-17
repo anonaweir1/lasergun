@@ -1,1 +1,29 @@
-/* You can add global styles to this file, and also import other style files */
+body {
+    background-image: url("https://newevolutiondesigns.com/images/freebies/city-wallpaper-46.jpg");
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+    font-weight: 500; 
+    font-size: 14px; 
+    color: #1e1e1e; /* dark gray */
+    text-align: left;
+}
+
+.login {
+    margin-top: 50px;
+    text-align: center;
+    font-size: 20px;
+}
+
+
+.login input {
+    display: block;
+    margin:0 auto;
+    width: 150px;         
+}
+
+.login label {
+    line-height: 40px;      
+}
+
+.login div {
+    line-height: 100px;    
+}

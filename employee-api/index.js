@@ -1,18 +1,21 @@
 const express = require('express');
 const app = express();
 const db = require('./db.js');
-const loginDetails = {name: 'hr', password: 'hrPassword'};
 
-app.get('/employees', function(req, res)
+const bodyParser = require('body-parser');
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+
+app.get('/dawid', function(req, res)
 {
-    res.send(employees);
+    res.send("hello");
 });
 
 app.post('/test-page', function(req, res) 
 {
-    console.log(req.body);
-    res.send(loginDetails);
-    db.login(loginDetails.name, loginDetails.password);
+    //res.send(loginDetails);
+    //console.log();
+    db.login(req.body.name, req.body.password);
 });
 
 app.listen(8002, function()

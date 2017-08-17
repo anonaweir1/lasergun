@@ -2,13 +2,15 @@ const mysql = require('mysql');
 const express = require('express');
 const app = express();
 
-app.post('/test-page', function(req, res) 
+const bodyParser = require('body-parser')
+app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.json())
+
+app.post('/api/test-page', function(req, res) 
 {
     //this.name = req.name;
     //this.password = req.password;
 });
-
-
 
 exports.login  = function(pUsername, pPassword)
 {

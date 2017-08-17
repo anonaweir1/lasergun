@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams,HttpHeaders } from '@angular/common/http';
 
 @Component({
   selector: 'laser-login',
@@ -18,13 +18,16 @@ export class LoginComponent implements OnInit
   {
 
   }
-  
+
   login(pName, pPassword)
   {
-    const loginDetails = {name: pName, password: pPassword};    
-    const req = this.http.post('/test-page', loginDetails);
+    let headers = new Headers({ 'Accept': 'application/json' });
 
-    req.subscribe();
+    const loginDetails = {name: pName, password: pPassword};
+
+    this.http.post('/api/test-page/', loginDetails, {
+    }).subscribe();
+    
       //this.results = data['results'];
   }
 }
